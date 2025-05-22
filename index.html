@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name | Portfolio</title>
+  <title>Raquel Susko | Portfolio</title>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -13,13 +14,13 @@
       color: #333;
     }
     header {
-      background-color: #6a0dad;
+      background-color: #008080; /* Teal-blue */
       color: white;
       padding: 20px;
       text-align: center;
     }
     nav {
-      background-color: #4b0082;
+      background-color: #006666;
       display: flex;
       justify-content: center;
       padding: 10px;
@@ -37,30 +38,64 @@
       padding: 20px;
       max-width: 800px;
       margin: auto;
+      background-color: white;
+      color: #333;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
     h2 {
       border-bottom: 2px solid #ccc;
       padding-bottom: 5px;
     }
+    img.profile-pic {
+      max-width: 150px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
     footer {
       text-align: center;
       padding: 20px;
-      background-color: #eee;
-      margin-top: 20px;
+      background-color: #004d4d;
+      color: white;
     }
     a.button {
-      background-color: #6a0dad;
+      background-color: #004d4d;
       color: white;
       padding: 10px 15px;
       text-decoration: none;
       border-radius: 5px;
+      display: inline-block;
+      margin-top: 10px;
+      transition: all 0.2s ease;
+    }
+    a.button:hover {
+      background-color: #005f5f;
+      transform: scale(1.05);
+    }
+    .highlights ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    .highlights li {
+      padding: 10px 0;
+      font-size: 1rem;
+    }
+    hr {
+      border: none;
+      height: 1px;
+      background: #ccc;
+      margin: 40px 0;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Your Name</h1>
-    <p>Electrical Engineering Student | Robotics & Biomedical Projects</p>
+    <h1>Raquel Susko</h1>
+    <p>Electrical Engineering Student | Biomedical Tech & Robotics Enthusiast</p>
   </header>
 
   <nav>
@@ -73,14 +108,45 @@
 
   <section>
     <h2>About Me</h2>
+    <img src="images/profile.jpg" alt="Raquel Susko" class="profile-pic" />
     <p>
-      I’m a passionate electrical engineering student exploring robotics, biomedical
-      devices, and embedded systems. This site showcases some of my favorite projects.
+      Hi, I’m Raquel Susko — an Electrical Engineering student at Texas A&M University, with minors in Biomedical Engineering and Computer Science. I’m deeply passionate about combining technology with human health, and I thrive at the intersection of embedded systems, robotics, and biosensing.
     </p>
+    <p>
+      As a student researcher, I’ve developed reinforcement learning algorithms for robotic navigation and designed electrochemical biosensors to detect cardiovascular biomarkers. I lead the Electrical Sub-Team for Texas A&M’s WIRED Autonomous Underwater Vehicle Robotics Club, where I design PCBs, integrate sensors, and develop onboard systems using platforms like the Jetson Nano.
+    </p>
+    <p>
+      Outside of academics, I’m driven by a personal commitment to health and performance. I love running — from marathons to Spartan obstacle course races — and I’m a regular at the gym. My enthusiasm for health, fitness, and data fuels my fascination with biomedical devices and how technology can empower people to live healthier, more informed lives.
+    </p>
+    <div class="highlights">
+      <ul>
+        <li>🔬 Biomedical Device Researcher</li>
+        <li>🤖 Robotics Team Electrical Lead</li>
+        <li>🏃‍♀️ Spartan Racer & Marathon Runner</li>
+      </ul>
+    </div>
+  </section>
+
+  <hr>
+
+  <section>
+    <h2>Resume</h2>
+    <p>You can view or download my resume using the link below:</p>
+    <a href="Raquel_Susko_Resume.pdf" class="button" target="_blank">Download Resume</a>
+  </section>
+
+  <hr>
+
+  <section>
+    <h2>Contact</h2>
+    <p>If you'd like to get in touch, feel free to reach out via the methods below:</p>
+    <p><i class="fas fa-envelope"></i> Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+    <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://linkedin.com/in/yourusername" target="_blank">linkedin.com/in/yourusername</a></p>
+    <p><i class="fab fa-github"></i> GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
   </section>
 
   <footer>
-    &copy; 2025 Your Name
+    &copy; 2025 Raquel Susko
   </footer>
 </body>
 </html>
