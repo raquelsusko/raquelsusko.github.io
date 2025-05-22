@@ -18,6 +18,21 @@
       padding: 20px;
       text-align: center;
     }
+    nav {
+      background-color: #4b0082;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
     section {
       padding: 20px;
       max-width: 800px;
@@ -26,9 +41,6 @@
     h2 {
       border-bottom: 2px solid #ccc;
       padding-bottom: 5px;
-    }
-    .project {
-      margin-bottom: 15px;
     }
     footer {
       text-align: center;
@@ -51,36 +63,20 @@
     <p>Electrical Engineering Student | Robotics & Biomedical Projects</p>
   </header>
 
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="robotic-hand.html">Robotic Hand</a>
+    <a href="biosensor.html">Biosensor</a>
+    <a href="resume.html">Resume</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
   <section>
     <h2>About Me</h2>
     <p>
       I’m a passionate electrical engineering student exploring robotics, biomedical
       devices, and embedded systems. This site showcases some of my favorite projects.
     </p>
-  </section>
-
-  <section>
-    <h2>Projects</h2>
-    <div class="project">
-      <h3>Robotic Hand Prototype</h3>
-      <p>Developed a multi-finger robotic hand controlled via Arduino and EMG sensors.</p>
-    </div>
-    <div class="project">
-      <h3>Electrochemical Biosensor</h3>
-      <p>Built an STM32-based potentiostat for real-time sensing of cardiovascular biomarkers.</p>
-    </div>
-  </section>
-
-  <section>
-    <h2>Resume</h2>
-    <p><a href="resume.pdf" class="button" target="_blank">Download My Resume</a></p>
-  </section>
-
-  <section>
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/yourusername" target="_blank">yourusername</a></p>
-    <p>GitHub: <a href="https://github.com/yourusername" target="_blank">yourusername</a></p>
   </section>
 
   <footer>
