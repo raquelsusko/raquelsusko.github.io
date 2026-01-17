@@ -2,41 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DRONE Project | Raquel Susko</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <style>
-    :root { --primary: #0f172a; --secondary: #0d9488; --bg: #f8fafc; --text: #334155; --white: #ffffff; }
-    body { font-family: 'Inter', sans-serif; margin: 0; line-height: 1.6; background-color: var(--bg); color: var(--text); }
-    header { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: var(--white); padding: 50px 20px; text-align: center; }
-    nav { background: var(--white); display: flex; justify-content: center; padding: 15px; position: sticky; top: 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); z-index: 100; }
-    nav a { color: var(--primary); margin: 0 15px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
-    nav a:hover { color: var(--secondary); }
-    .container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
-    section { background: var(--white); padding: 40px; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-    h2 { color: var(--primary); border-left: 4px solid var(--secondary); padding-left: 15px; margin-top: 0; }
-    .tech-list { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; }
-    .tech-tag { background: #f1f5f9; color: var(--secondary); padding: 5px 12px; border-radius: 6px; font-weight: 600; font-size: 0.85rem; }
-    footer { text-align: center; padding: 40px; color: #94a3b8; }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <h1>DRONE Project</h1>
-    <p>Autonomous Aerial Manipulation & Object Retrieval</p>
+    <h1>Project: DRONE</h1>
+    <p>LENS Lab Aerial Manipulation Team</p>
   </header>
   <nav>
     <a href="index.html">Home</a>
-    <a href="lens-lab.html">LENS Lab</a>
+    <a href="lens_lab.html">LENS Lab</a>
+    <a href="surgical_robotics.html">Surgical Robotics</a>
     <a href="drone.html">DRONE</a>
     <a href="auv.html">AUV</a>
     <a href="biosensor.html">Biosensor</a>
   </nav>
   <div class="container">
     <section>
-      <h2>Overview</h2>
-      <p>This project focused on developing an end-to-end system for an aerial robot to autonomously identify, approach, and retrieve objects. This required bridging the gap between high-level computer vision and low-level flight control.</p>
+      <h2>Autonomous Retrieval</h2>
+      [cite_start]<p>In this project, I worked on the design and integration of a robotic manipulator for an aerial platform[cite: 1].</p>
       <ul>
-        <li>Integrated an <strong>SO101 robotic arm</strong> onto a drone chassis, managing weight distribution and center-of-gravity shifts.</li>
-        <li>Implemented the <strong>SmolVLA</strong> architecture to enable visual-language
+        [cite_start]<li>Designed an <strong>SO101 arm attachment</strong> for a drone to enable autonomous object pickup[cite: 1].</li>
+        [cite_start]<li>Utilized the <strong>SmolVLA architecture</strong> for object manipulation and visual-action mapping[cite: 1].</li>
+      </ul>
+      <div style="margin-top: 20px;">
+        <span class="tech-tag">SmolVLA</span>
+        <span class="tech-tag">Hardware Design</span>
+        <span class="tech-tag">Python</span>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

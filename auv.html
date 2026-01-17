@@ -2,58 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AUV Robotics | Raquel Susko</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <style>
-    :root { --primary: #0f172a; --secondary: #0d9488; --bg: #f8fafc; --text: #334155; --white: #ffffff; }
-    body { font-family: 'Inter', sans-serif; margin: 0; line-height: 1.6; background-color: var(--bg); color: var(--text); }
-    header { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: var(--white); padding: 50px 20px; text-align: center; }
-    nav { background: var(--white); display: flex; justify-content: center; padding: 15px; position: sticky; top: 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); z-index: 100; }
-    nav a { color: var(--primary); margin: 0 15px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
-    nav a:hover { color: var(--secondary); }
-    .container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
-    section { background: var(--white); padding: 40px; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-    h2 { color: var(--primary); border-left: 4px solid var(--secondary); padding-left: 15px; margin-top: 0; }
-    .tech-list { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; }
-    .tech-tag { background: #f1f5f9; color: var(--secondary); padding: 5px 12px; border-radius: 6px; font-weight: 600; font-size: 0.85rem; }
-    footer { text-align: center; padding: 40px; color: #94a3b8; }
-  </style>
+  <title>WIRED AUV | Raquel Susko</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
     <h1>WIRED AUV Robotics</h1>
-    <p>Electrical Lead | Autonomous Underwater Vehicle Design</p>
+    <p>Electrical Lead & Programming Team Member</p>
   </header>
   <nav>
     <a href="index.html">Home</a>
-    <a href="lens-lab.html">LENS Lab</a>
+    <a href="lens_lab.html">LENS Lab</a>
+    <a href="surgical_robotics.html">Surgical Robotics</a>
     <a href="drone.html">DRONE</a>
     <a href="auv.html">AUV</a>
     <a href="biosensor.html">Biosensor</a>
   </nav>
   <div class="container">
     <section>
-      <h2>Overview</h2>
-      <p>As the <strong>Electrical Lead</strong> for Texas A&M’s WIRED AUV club, I oversee the hardware architecture that allows our vehicle to navigate complex underwater environments. Our team successfully competed in the semifinals of the international <strong>RoboSub competition</strong> in Irvine, California.</p>
+      <h2>Underwater Autonomous Systems</h2>
+      [cite_start]<p>I lead the electrical design for autonomous underwater vehicles competing in the international <strong>RoboSub competition</strong>[cite: 1].</p>
       <ul>
-        <li>Designed and soldered <strong>custom multi-layer PCBs</strong> using Altium Designer for power distribution and signal conditioning.</li>
-        <li>Integrated a complex sensor suite including <strong>DVL, VectorNav IMUs, and hydrophone pingers</strong>.</li>
-        <li>Developed onboard vision and navigation systems utilizing the <strong>NVIDIA Jetson Nano</strong> and Embedded C++.</li>
+        [cite_start]<li>Soldered and designed <strong>custom Altium PCBs</strong> for power and signal management[cite: 1].</li>
+        [cite_start]<li>Integrated a complex sensor suite including <strong>VectorNav IMUs, DVL, pingers, and pressure sensors</strong>[cite: 1].</li>
+        [cite_start]<li>Implemented <strong>Jetson Nano</strong> onboard computing with <strong>RoboFlow image recognition</strong> pipelines[cite: 1].</li>
       </ul>
-    </section>
-    <section>
-      <h2>Technologies Used</h2>
-      <ul class="tech-list">
-        <li class="tech-tag">Altium Designer</li>
-        <li class="tech-tag">NVIDIA Jetson Nano</li>
-        <li class="tech-tag">Embedded C/C++</li>
-        <li class="tech-tag">RoboFlow (Vision)</li>
-        <li class="tech-tag">Sensor Fusion (IMU/DVL)</li>
-      </ul>
+      <div style="margin-top: 20px;">
+        <span class="tech-tag">Altium Designer</span>
+        <span class="tech-tag">Embedded C/C++</span>
+        <span class="tech-tag">Jetson Nano</span>
+      </div>
     </section>
   </div>
-  <footer>&copy; 2026 Raquel Susko</footer>
 </body>
 </html>
