@@ -3,54 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DRONE | Raquel Susko</title>
+  <title>DRONE Project | Raquel Susko</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
-    header { background-color: #008080; color: white; padding: 20px; text-align: center; }
-    nav { background-color: #006666; display: flex; justify-content: center; padding: 10px; }
-    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-    nav a:hover { text-decoration: underline; }
-    section { padding: 20px; max-width: 800px; margin: auto; background-color: white; margin-bottom: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
-    h2 { border-bottom: 2px solid #ccc; padding-bottom: 5px; }
-    footer { text-align: center; padding: 20px; background-color: #004d4d; color: white; }
-    ul { padding-left: 20px; }
+    :root { --primary: #0f172a; --secondary: #0d9488; --bg: #f8fafc; --text: #334155; --white: #ffffff; }
+    body { font-family: 'Inter', sans-serif; margin: 0; line-height: 1.6; background-color: var(--bg); color: var(--text); }
+    header { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: var(--white); padding: 50px 20px; text-align: center; }
+    nav { background: var(--white); display: flex; justify-content: center; padding: 15px; position: sticky; top: 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); z-index: 100; }
+    nav a { color: var(--primary); margin: 0 15px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+    nav a:hover { color: var(--secondary); }
+    .container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+    section { background: var(--white); padding: 40px; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+    h2 { color: var(--primary); border-left: 4px solid var(--secondary); padding-left: 15px; margin-top: 0; }
+    .tech-list { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; }
+    .tech-tag { background: #f1f5f9; color: var(--secondary); padding: 5px 12px; border-radius: 6px; font-weight: 600; font-size: 0.85rem; }
+    footer { text-align: center; padding: 40px; color: #94a3b8; }
   </style>
 </head>
 <body>
   <header>
     <h1>DRONE Project</h1>
-    <p>Autonomous Object Pickup with Aerial Robot</p>
+    <p>Autonomous Aerial Manipulation & Object Retrieval</p>
   </header>
-
   <nav>
     <a href="index.html">Home</a>
-    <a href="lens_lab.html">LENS Lab</a>
+    <a href="lens-lab.html">LENS Lab</a>
     <a href="drone.html">DRONE</a>
     <a href="auv.html">AUV</a>
-    <!-- <a href="robotic-hand.html">Robotic Hand</a> -->
     <a href="biosensor.html">Biosensor</a>
   </nav>
-
-  <section>
-    <h2>Overview</h2>
-    <p>
-        [cite_start]As a team member, I helped design an SO101 arm attached to a drone to autonomously pick up objects[cite: 1]. This project utilized the SmolVLA architecture for object manipulation.
-    </p>
-  </section>
-
-  <section>
-    <h2>Technologies Used</h2>
-    <ul>
-      <li>SO101 Robotic Arm</li>
-      <li>SmolVLA</li>
-      <li>Autonomous Control Systems</li>
-      <li>Drone Integration</li>
-    </ul>
-  </section>
-
-  <footer>
-    &copy; 2025 Raquel Susko
-  </footer>
-</body>
-</html>
+  <div class="container">
+    <section>
+      <h2>Overview</h2>
+      <p>This project focused on developing an end-to-end system for an aerial robot to autonomously identify, approach, and retrieve objects. This required bridging the gap between high-level computer vision and low-level flight control.</p>
+      <ul>
+        <li>Integrated an <strong>SO101 robotic arm</strong> onto a drone chassis, managing weight distribution and center-of-gravity shifts.</li>
+        <li>Implemented the <strong>SmolVLA</strong> architecture to enable visual-language
