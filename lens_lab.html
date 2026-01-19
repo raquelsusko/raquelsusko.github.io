@@ -23,19 +23,19 @@
     <section>
       <h2>Research Objectives: Probing Model Robustness</h2>
       <p>
-        As a Paid Student Researcher, I am investigating the boundaries of <strong>SmolVLA</strong> and <strong>Imitation Learning</strong>. Our current research focuses on identifying the specific variables—color, geometry, and spatial placement—that trigger model failure or success in generalized environments.
+        As a Student Researcher, I am investigating the boundaries of <strong>SmolVLA</strong> and <strong>Imitation Learning</strong>. Our current research focuses on identifying the specific variables—color, geometry, and spatial placement—that trigger model failure or success in generalized environments.
       </p>
       <ul>
         <li><strong>Data Efficiency:</strong> Quantifying the minimum threshold of expert demonstrations required for stable task completion to reduce the overhead of Imitation Learning.</li>
         <li><strong>Feature Generalization:</strong> Testing how VLA models weigh visual features (e.g., distinguishing an object by color vs. shape) and their ability to generalize to novel object placements.</li>
-        <li><strong>Algorithmic Implementation:</strong> Utilizing <strong>Lerobot</strong> to deploy and compare <strong>ACT</strong> (Action Chunking with Transformers), <strong>SmolVLA</strong>, and <strong>DAgger</strong> (Dataset Aggregation) on SO101 robotic platforms.</li>
+        <li><strong>Algorithmic Implementation:</strong> Utilizing <strong>Lerobot</strong> to deploy and compare <strong>ACT</strong> (Action Chunking with Transformers), <strong>SmolVLA</strong>, and larger <strong>VLA models</strong> on SO101 robotic platforms.</li>
       </ul>
     </section>
 
     <section>
       <h2>Scientific Methodology</h2>
       <p>
-        We are systematically perturbing the environment to observe the model's <strong>policy robustness</strong>. By isolating variables like lighting, distractor objects, and coordinate shifts, we aim to map the "latent space" of the model's decision-making process.
+        We are systematically perturbing the environment to observe the model's <strong>policy robustness</strong>. By keeping the same task but varying the objects and their placement, we aim to understand what VLA models are generalizing, and what concepts they struggle to learn.
       </p>
     </section>
 
@@ -48,7 +48,7 @@
           Your browser does not support the video tag.
         </video>
         <p style="font-size: 0.85rem; color: #64748b; margin-top: 10px;">
-          Deploying trained VLA policies on the SO101 platform. This workflow involves gathering human-expert demonstrations via teleoperation before policy distillation.
+          Deploying trained VLA policies on the SO101 platform. This workflow involves gathering human-expert demonstrations via teleoperation before training and deployment.
         </p>
       </div>
     </section>
