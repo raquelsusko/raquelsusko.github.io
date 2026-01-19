@@ -2,15 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Biosensor Research | Raquel Susko</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <header>
-    <h1>Electrochemical Detection</h1>
-    <p>Cardiovascular Health Monitoring & App Development</p>
+    <h1>Electrochemical Protein Detection</h1>
+    <p>Real-Time Biosensing & Embedded Systems Integration</p>
   </header>
+
   <nav>
     <a href="index.html">Home</a>
     <a href="lens_lab.html">LENS Lab</a>
@@ -19,21 +22,57 @@
     <a href="auv.html">AUV</a>
     <a href="biosensor.html">Biosensor</a>
   </nav>
+
   <div class="container">
     <section>
-      <h2>Protein Detection Research</h2>
-      <p>My research involves the analysis of electrochemical data to identify biomarkers critical for heart health.</p>
+      <h2>Research Overview</h2>
+      <p>
+        During this research term, I focused on the technical implementation of a real-time biosensing platform. My work bridged the gap between low-level firmware development and high-level mobile user interfaces, creating a cohesive system for monitoring cardiovascular biomarkers.
+      </p>
+      <p>
+        The project involved developing a microcontroller-based system to collect, log, and display electrochemical and temperature data in real-time.
+      </p>
+    </section>
+
+    <section>
+      <h2>Embedded Firmware & Hardware Communication</h2>
+      <p>
+        I served as the primary student researcher for firmware integration on the <strong>STM32WB55RG</strong> microcontroller platform. Using <strong>STM32CubeIDE</strong>, I configured system clocks, GPIOs, and peripherals to manage complex data flows.
+      </p>
       <ul>
-        <li>Analyzed <strong>electrochemical biosensor data</strong> to monitor cardiovascular health biomarkers.</li>
-        <li>Developed a <strong>mobile app using Flutter</strong> for real-time data visualization.</li>
-        <li>Integrated a microprocessor and temperature sensor via <strong>Bluetooth Low Energy (BLE)</strong>.</li>
+        <li><strong>SPI Integration:</strong> Modified and adapted SDKs from Analog Devices to enable communication with the <strong>AD5940 potentiostat</strong> for precise electrochemical signal measurement.</li>
+        <li><strong>I²C & DMA:</strong> Implemented <strong>I²C</strong> protocols for temperature sensing, utilizing <strong>Direct Memory Access (DMA)</strong> to ensure non-blocking, efficient data transfers essential for real-time systems.</li>
+        <li><strong>Data Persistence:</strong> Integrated a <strong>FATFS</strong> file system for microSD card logging, developing a unique timestamp-based naming convention to prevent data overwriting during long-term monitoring sessions.</li>
       </ul>
-      <div style="margin-top: 20px;">
-        <span class="tech-tag">Flutter</span>
+    </section>
+
+    <section>
+      <h2>Mobile Application Development</h2>
+      <p>
+        To make the data accessible to users, I contributed to a cross-platform mobile application built with <strong>Flutter</strong>.
+      </p>
+      <ul>
+        <li>Designed front-end UI components using <strong>Dart</strong> to improve navigability and data readability.</li>
+        <li>Developed asynchronous data handling to process real-time streams coming from the microcontroller via <strong>Bluetooth Low Energy (BLE)</strong>.</li>
+        <li>Built custom interface sections, such as a sampling interval configuration page, to give users control over sensor data frequency.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Technical Stack</h2>
+      <div class="tech-stack">
+        <span class="tech-tag">Embedded C</span>
+        <span class="tech-tag">STM32CubeIDE</span>
+        <span class="tech-tag">I²C / SPI</span>
+        <span class="tech-tag">Flutter & Dart</span>
         <span class="tech-tag">BLE</span>
-        <span class="tech-tag">Data Analysis</span>
+        <span class="tech-tag">FATFS</span>
       </div>
     </section>
   </div>
+
+  <footer>
+    &copy; 2026 Raquel Susko | Texas A&M University
+  </footer>
 </body>
 </html>

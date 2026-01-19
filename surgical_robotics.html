@@ -25,35 +25,66 @@
 
   <div class="container">
     <section>
-      <h2>REU Student Researcher</h2>
-      <p>During the summer of 2025, I served as an REU Student Researcher in the <strong>Imerse Lab</strong> at Johns Hopkins University. My work focused on pioneering surgical robotics using Universal Robotic arms and high-precision Zivid cameras.</p>
-      
-      <h3>Project Highlights</h3>
+      <h2>System Overview: Haptic Teleoperation for Partial Nephrectomy</h2>
+      <p>
+        During my REU at the <strong>Imerse Lab</strong>, I developed a ROS 2-based teleoperation system designed for high-precision surgical tasks. The system enables intuitive control of a <strong>UR5 robotic arm</strong> using <strong>Force Dimension haptic devices</strong>, specifically optimized for partial nephrectomy procedures.
+      </p>
+      <p>
+        My primary contribution focused on the <code>haptic_translator_trial_pkg</code>, where I engineered the translation layer between human input and robotic action, ensuring surgical-grade precision through PID-enhanced trajectory smoothing.
+      </p>
+    </section>
+
+    <section>
+      <h2>Core Features & Implementation</h2>
       <ul>
-        <li>Developed a <strong>teleoperation system in ROS2</strong> for controlling a UR5 arm using a force-dimension haptic control device.</li>
-        <li>Facilitated critical data collection for <strong>imitation learning</strong> algorithms.</li>
-        <li>Integrated high-fidelity 3D vision systems to enhance robotic perception in surgical environments.</li>
+        <li><strong>6-DOF Teleoperation:</strong> Developed 1:1 position and orientation mapping between the Force Dimension device (Omega.7) and the UR5 TCP.</li>
+        <li><strong>Multi-Modal Interface:</strong> Integrated a 3-pedal foot interface to manage critical surgical states: clutch control (movement enable), vacuum gripper activation, and automated data recording.</li>
+        <li><strong>PID Control:</strong> Implemented trajectory smoothing algorithms to minimize jitter and enhance precision during delicate tissue manipulation.</li>
+        <li><strong>Hardware Integration:</strong> Managed a complex stack including <strong>Zivid 3D cameras</strong>, <strong>Robotiq vacuum grippers</strong>, and <strong>Spinnaker camera drivers</strong> within a unified ROS 2 Humble environment.</li>
       </ul>
     </section>
 
     <section>
-      <h2>Technical Contributions</h2>
-      <div style="margin-bottom: 20px;">
-        <span class="tech-tag">ROS2</span>
-        <span class="tech-tag">C++</span>
-        <span class="tech-tag">UR5 Robotic Arm</span>
-        <span class="tech-tag">Haptic Control</span>
-        <span class="tech-tag">Imitation Learning</span>
+      <h2>Data Pipeline for Imitation Learning</h2>
+      <p>
+        A critical goal of the system was generating high-fidelity datasets for machine learning. I designed a robust data recording node that captures synchronized observations and actions.
+      </p>
+      <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
+        <div style="flex: 1; min-width: 250px; background: #f1f5f9; padding: 20px; border-radius: 8px;">
+          <h4 style="margin-top: 0; color: var(--secondary);">Observations Recorded</h4>
+          <ul style="font-size: 0.85rem; padding-left: 20px;">
+            <li>6-DOF Robot Poses & Velocities</li>
+            <li>Joint-level positions/velocities</li>
+            <li>RGB-D Point Clouds (Zivid/Spinnaker)</li>
+            <li>Haptic Device state feedback</li>
+          </ul>
+        </div>
+        <div style="flex: 1; min-width: 250px; background: #f1f5f9; padding: 20px; border-radius: 8px;">
+          <h4 style="margin-top: 0; color: var(--secondary);">Actions Recorded</h4>
+          <ul style="font-size: 0.85rem; padding-left: 20px;">
+            <li>Commanded Target Poses</li>
+            <li>Vacuum Gripper activation states</li>
+            <li>Foot pedal toggle events</li>
+            <li>Low-level motion parameters</li>
+          </ul>
+        </div>
       </div>
-      <p>You can view the implementation details and source code for the teleoperation system on my GitHub:</p>
+      <p style="margin-top: 20px;">
+        Data is simultaneously exported to <strong>ROS Bags (.db3)</strong> for visual playback and <strong>Pickle files (.pkl)</strong> for direct ingestion into ML training pipelines.
+      </p>
+    </section>
+
+    <section>
+      <h2>Project Repository</h2>
+      <p>The full implementation of the teleoperation nodes, foot pedal interfaces, and data recorder can be found here:</p>
       <a href="https://github.com/raquelsusko/JHU_Teleop" class="button" target="_blank">
-        <i class="fab fa-github"></i> JHU_Teleop Repository
+        <i class="fab fa-github"></i> View JHU_Teleop on GitHub
       </a>
     </section>
   </div>
 
   <footer>
-    &copy; 2026 Raquel Susko
+    &copy; 2026 Raquel Susko | Johns Hopkins University REU
   </footer>
 </body>
 </html>
