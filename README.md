@@ -4,9 +4,6 @@ Welcome to my professional portfolio repository. I am an Electrical Engineering 
 
 This repository contains the source code for my personal portfolio website, which showcases my research in Vision-Language-Action (VLA) models, surgical robotics, and autonomous systems.
 
-## 🚀 Live Demo
-**https://github.com/raquelsusko**
-
 ## 🛠 Technical Stack
 * **AI & Robotics:** ROS 2 (Humble/Galactic), Lerobot, SmolVLA, ACT, DAgger, PyTorch, TensorFlow.
 * **Embedded Systems:** Altium Designer (Custom PCB), STM32 (C/C++), I²C, SPI, DMA, Jetson Nano.
