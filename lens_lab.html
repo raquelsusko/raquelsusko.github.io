@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>LENS Lab & LCSR Research | Raquel Susko</title>
+  <title>LENS Lab Research | Raquel Susko</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <h1>Robotics Research</h1>
-    <p>Imitation Learning & Surgical Robotics</p>
+    <h1>Robotics Research: LENS Lab</h1>
+    <p>Investigating Generalization in Vision-Language-Action (VLA) Models</p>
   </header>
   <nav>
     <a href="index.html">Home</a>
@@ -21,24 +21,34 @@
   </nav>
   <div class="container">
     <section>
-      <h2>LENS Lab (Texas A&M)</h2>
-      <p>As a <strong>Paid Student Researcher</strong>, I enhance robotic performance using human expert demonstrations.</p>
+      <h2>Research Objectives: Probing Model Robustness</h2>
+      <p>
+        As a Paid Student Researcher, I am investigating the boundaries of <strong>SmolVLA</strong> and <strong>Imitation Learning</strong>. Our current research focuses on identifying the specific variables—color, geometry, and spatial placement—that trigger model failure or success in generalized environments.
+      </p>
       <ul>
-        <li>Utilized the <strong>Lerobot</strong> interface from HuggingFace to manage demonstration data.</li>
-        <li>Designed and implemented algorithms inspired by <strong>ACT, SmolVLA, and DAgger</strong> to improve SO101 robot performance in generalized tasks.</li>
+        <li><strong>Data Efficiency:</strong> Quantifying the minimum threshold of expert demonstrations required for stable task completion to reduce the overhead of Imitation Learning.</li>
+        <li><strong>Feature Generalization:</strong> Testing how VLA models weigh visual features (e.g., distinguishing an object by color vs. shape) and their ability to generalize to novel object placements.</li>
+        <li><strong>Algorithmic Implementation:</strong> Utilizing <strong>Lerobot</strong> to deploy and compare <strong>ACT</strong> (Action Chunking with Transformers), <strong>SmolVLA</strong>, and <strong>DAgger</strong> (Dataset Aggregation) on SO101 robotic platforms.</li>
       </ul>
     </section>
 
     <section>
+      <h2>Scientific Methodology</h2>
+      <p>
+        We are systematically perturbing the environment to observe the model's <strong>policy robustness</strong>. By isolating variables like lighting, distractor objects, and coordinate shifts, we aim to map the "latent space" of the model's decision-making process.
+      </p>
+    </section>
+
+    <section>
       <h2>Lab Demonstration</h2>
-      <div class="video-container" style="margin-top: 20px; text-align: center;">
-        <h3>Project Demonstration</h3>
+      <div class="video-container" style="text-align: center;">
+        <h3>Vision-Language-Action Deployment</h3>
         <video width="100%" controls style="max-width: 600px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
           <source src="videos/lenslab.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
         <p style="font-size: 0.85rem; color: #64748b; margin-top: 10px;">
-          Collecting data, training a smolVLA model, and deploying on SO101 robots in the LENS Lab.
+          Deploying trained VLA policies on the SO101 platform. This workflow involves gathering human-expert demonstrations via teleoperation before policy distillation.
         </p>
       </div>
     </section>

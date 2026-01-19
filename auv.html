@@ -2,15 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>WIRED AUV | Raquel Susko</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WIRED AUV Robotics | Raquel Susko</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <header>
-    <h1>WIRED AUV Robotics</h1>
-    <p>Electrical Lead & Programming Team Member</p>
+    <h1>WIRED AUV: "Swim Shady"</h1>
+    <p>Electrical Lead & Programming Subteam Member</p>
   </header>
+
   <nav>
     <a href="index.html">Home</a>
     <a href="lens_lab.html">LENS Lab</a>
@@ -19,21 +22,60 @@
     <a href="auv.html">AUV</a>
     <a href="biosensor.html">Biosensor</a>
   </nav>
+
   <div class="container">
     <section>
-      <h2>Underwater Autonomous Systems</h2>
-      <p>I lead the electrical design for autonomous underwater vehicles competing in the international <strong>RoboSub competition</strong>.</p>
+      <h2>Project Overview</h2>
+      <p>
+        As the <strong>Electrical Lead</strong> for the Women in Robotics, Engineering, and Development (WIRED) AUV team, I oversaw the development of "Swim Shady," an autonomous underwater vehicle designed for the international <strong>RoboSub competition</strong>.
+      </p>
+      
+      <div style="text-align: center; margin: 30px 0;">
+        <img src="images/working_on_robot.jpg" alt="Raquel working on the AUV" style="width: 100%; max-width: 700px; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);">
+        <p style="font-size: 0.85rem; color: #64748b; margin-top: 10px;">Integrating custom PCB systems into the internal shelving unit.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Electrical Subteam Accomplishments</h2>
+      <p>
+        My primary objective was to transition the vehicle from a "tangle of wires" to a centralized, professional system using <strong>Altium Designer</strong>.
+      </p>
       <ul>
-        <li>Soldered and designed <strong>custom Altium PCBs</strong> for power and signal management.</li>
-        <li>Integrated a complex sensor suite including <strong>VectorNav IMUs, DVL, pingers, and pressure sensors</strong>.</li>
-        <li>Implemented <strong>Jetson Nano</strong> onboard computing with <strong>RoboFlow image recognition</strong> pipelines.</li>
+        <li><strong>Custom ESC PCB:</strong> Designed and integrated a centralized board to organize eight Electronic Speed Controllers (ESCs) in a fixed row, streamlining diagnostics and reducing mechanical strain on wire terminals.</li>
+        <li><strong>Centralized Fuse Board:</strong> Developed a layout to protect thrusters and subsystems from overcurrent, significantly improving accessibility compared to previous scattered designs.</li>
+        <li><strong>Power Distribution:</strong> Managed a dual 24V battery system routed through buck converters to supply 16V to the Jetson Nano and the system fuse board.</li>
+        <li><strong>Safety Systems:</strong> Implemented a kill switch with an active low configuration, utilizing a solid-state relay to immediately disconnect power from thrusters upon trigger.</li>
       </ul>
-      <div style="margin-top: 20px;">
+    </section>
+
+    <section>
+      <h2>Programming Contributions</h2>
+      <p>
+        Beyond hardware, I contributed to the software stack, focusing on sensor integration and the transition to a modern communication framework.
+      </p>
+      <ul>
+        <li><strong>ROS 2 Architecture:</strong> Facilitated the transition to ROS 2 (Galactic), developing publishers for sensors like the <strong>Teledyne Wayfinder DVL</strong> and mission switches to create a modular, scalable codebase.</li>
+        <li><strong>PID Control:</strong> Co-developed the team's first PID controller, utilizing distance data from the DVL to calculate error and automate navigational maneuvers.</li>
+        <li><strong>Mission Control:</strong> Programmed a mission switch interface using GPIO pins to allow for code-restarts without manual computer reconnection during pool testing.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Technical Stack</h2>
+      <div class="tech-stack">
         <span class="tech-tag">Altium Designer</span>
-        <span class="tech-tag">Embedded C/C++</span>
+        <span class="tech-tag">ROS 2 (Galactic)</span>
+        <span class="tech-tag">Python</span>
         <span class="tech-tag">Jetson Nano</span>
+        <span class="tech-tag">Teledyne DVL</span>
+        <span class="tech-tag">I²C / PWM</span>
       </div>
     </section>
   </div>
+
+  <footer>
+    &copy; 2026 Raquel Susko | Texas A&M WIRED AUV
+  </footer>
 </body>
 </html>

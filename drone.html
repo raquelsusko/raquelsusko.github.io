@@ -9,7 +9,7 @@
 <body>
   <header>
     <h1>Project: DRONE</h1>
-    <p>LENS Lab Aerial Manipulation Team</p>
+    <p>Aerial Manipulation & High-Compute Edge Integration</p>
   </header>
   <nav>
     <a href="index.html">Home</a>
@@ -21,16 +21,44 @@
   </nav>
   <div class="container">
     <section>
-      <h2>Autonomous Retrieval</h2>
-      <p>In this project, I worked on the design and integration of a robotic manipulator for an aerial platform.</p>
+      <h2>Autonomous Aerial Object Retrieval</h2>
+      <p>
+        This project explores the limits of <strong>Vision-Language-Action (VLA)</strong> models in non-static, high-vibration environments. Our goal is to enable an aerial robot to execute complex retrieval tasks based on natural language commands (e.g., "Pick up the red block").
+      </p>
+      
+      <h3>Hardware-Software Co-Design</h3>
+      <p>
+        Integrating an <strong>SO101 arm</strong> onto a lightweight drone presented a significant mechatronic challenge. I worked to optimize the <strong>Thrust-to-Weight ratio</strong> while maintaining enough <strong>Edge Compute</strong> power to run inference locally.
+      </p>
       <ul>
-        <li>Designed an <strong>SO101 arm attachment</strong> for a drone to enable autonomous object pickup.</li>
-        <li>Utilized the <strong>SmolVLA architecture</strong> for object manipulation and visual-action mapping.</li>
+        <li><strong>Edge Computing:</strong> Integrated an <strong>NVIDIA Jetson Nano</strong> to handle real-time vision processing and SmolVLA inference.</li>
+        <li><strong>Dynamic Stability:</strong> Problem-solved the center-of-gravity (CoG) shifts caused by the movement of a heavy robotic arm relative to the drone's chassis.</li>
+        <li><strong>Power Management:</strong> Balanced high-capacity battery requirements with the strict weight constraints of an aerial platform.</li>
       </ul>
-      <div style="margin-top: 20px;">
-        <span class="tech-tag">SmolVLA</span>
-        <span class="tech-tag">Hardware Design</span>
-        <span class="tech-tag">Python</span>
+    </section>
+
+    <section>
+      <h2>Flight Testing & Development</h2>
+      <div class="video-container" style="text-align: center;">
+        <h3>Aerial Integration Test</h3>
+        <video width="100%" controls style="max-width: 600px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+          <source src="videos/drone_flying.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p style="font-size: 0.85rem; color: #64748b; margin-top: 10px;">
+          Initial flight stability test with the SO101 arm payload. Current research focuses on dampening the vibrations that affect the VLA model's visual input.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Research Focus</h2>
+      <div class="tech-stack">
+        <span class="tech-tag">SmolVLA Inference</span>
+        <span class="tech-tag">Aerial Manipulation</span>
+        <span class="tech-tag">Jetson Nano</span>
+        <span class="tech-tag">Edge AI</span>
+        <span class="tech-tag">Mechatronics</span>
       </div>
     </section>
   </div>
