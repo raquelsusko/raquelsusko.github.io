@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini Projects | Raquel Susko</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <h1>Mini Projects</h1>
+    <p>Independent side projects, built for fun</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="auv.html">AUV</a>
+    <a href="shield_ai.html">Shield AI</a>
+    <a href="surgical_robotics.html">Surgical Robotics</a>
+    <a href="lens_lab.html">LENS Lab</a>
+    <a href="drone.html">DRONE</a>
+    <a href="biosensor.html">Biosensor</a>
+    <a href="mini_projects.html">Mini Projects</a>
+  </nav>
+
+  <div class="container">
+    <section>
+      <h2>About This Page</h2>
+      <p>
+        This page is an evolving collection of small projects I build on my own time, outside of coursework and research &mdash; a place to try out ideas, learn new tools, and tinker. New projects get added here as I finish them.
+      </p>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <div class="tab-buttons" id="tabButtons"></div>
+      <div id="tabPanels"></div>
+    </section>
+  </div>
+
+  <footer>
+    &copy; 2026 Raquel Susko | Texas A&M University
+  </footer>
+
+  <script>
+    /* ------------------------------------------------------------------
+       HOW TO ADD A NEW MINI PROJECT
+       ------------------------------------------------------------------
+       Add a new object to the `miniProjects` array below. Each project
+       needs:
+         - title:       short project name (shown on the tab button)
+         - tagline:     one-line description shown under the heading
+         - description: one or more paragraphs (use an array of strings
+                         for multiple paragraphs)
+         - tags:        array of short strings for the tech-stack pills
+         - image:       (optional) path to an image, e.g. "images/foo.jpg"
+         - imageCaption:(optional) caption text under the image
+
+       New entries are automatically turned into a tab + panel, in the
+       order listed here. No other code needs to change.
+       ------------------------------------------------------------------ */
+
+    const miniProjects = [
+      {
+        title: "New Project",
+        tagline: "Coming soon",
+        description: [
+          "This tab is a placeholder. Replace the title, tagline, description, and tags in the miniProjects array (top of the script in this file) with details about your first mini project."
+        ],
+        tags: ["Add", "Your", "Tags", "Here"]
+      }
+    ];
+
+    const tabButtonsEl = document.getElementById('tabButtons');
+    const tabPanelsEl = document.getElementById('tabPanels');
+
+    function renderProjects() {
+      tabButtonsEl.innerHTML = '';
+      tabPanelsEl.innerHTML = '';
+
+      miniProjects.forEach((project, index) => {
+        // Tab button
+        const btn = document.createElement('button');
+        btn.className = 'tab-button' + (index === 0 ? ' active' : '');
+        btn.textContent = project.title;
+        btn.setAttribute('data-index', index);
+        btn.addEventListener('click', () => showTab(index));
+        tabButtonsEl.appendChild(btn);
+
+        // Tab panel
+        const panel = document.createElement('div');
+        panel.className = 'tab-panel' + (index === 0 ? ' active' : '');
+        panel.setAttribute('data-index', index);
+
+        const heading = document.createElement('h3');
+        heading.textContent = project.title;
+        panel.appendChild(heading);
+
+        if (project.tagline) {
+          const tagline = document.createElement('p');
+          tagline.style.color = '#64748b';
+          tagline.style.fontStyle = 'italic';
+          tagline.style.marginTop = '-8px';
+          tagline.textContent = project.tagline;
+          panel.appendChild(tagline);
+        }
+
+        const paragraphs = Array.isArray(project.description) ? project.description : [project.description];
+        paragraphs.forEach(text => {
+          const p = document.createElement('p');
+          p.textContent = text;
+          panel.appendChild(p);
+        });
+
+        if (project.image) {
+          const imgWrap = document.createElement('div');
+          imgWrap.style.textAlign = 'center';
+          imgWrap.style.margin = '25px 0';
+
+          const img = document.createElement('img');
+          img.src = project.image;
+          img.alt = project.title;
+          img.style.width = '100%';
+          img.style.maxWidth = '650px';
+          img.style.borderRadius = '12px';
+          img.style.boxShadow = '0 10px 15px -3px rgba(0,0,0,0.1)';
+          imgWrap.appendChild(img);
+
+          if (project.imageCaption) {
+            const caption = document.createElement('p');
+            caption.style.fontSize = '0.85rem';
+            caption.style.color = '#64748b';
+            caption.style.marginTop = '10px';
+            caption.textContent = project.imageCaption;
+            imgWrap.appendChild(caption);
+          }
+
+          panel.appendChild(imgWrap);
+        }
+
+        if (project.tags && project.tags.length) {
+          const tagWrap = document.createElement('div');
+          tagWrap.className = 'tech-stack';
+          tagWrap.style.marginTop = '15px';
+          project.tags.forEach(tag => {
+            const span = document.createElement('span');
+            span.className = 'tech-tag';
+            span.textContent = tag;
+            tagWrap.appendChild(span);
+          });
+          panel.appendChild(tagWrap);
+        }
+
+        tabPanelsEl.appendChild(panel);
+      });
+    }
+
+    function showTab(index) {
+      document.querySelectorAll('.tab-button').forEach(btn => {
+        btn.classList.toggle('active', Number(btn.getAttribute('data-index')) === index);
+      });
+      document.querySelectorAll('.tab-panel').forEach(panel => {
+        panel.classList.toggle('active', Number(panel.getAttribute('data-index')) === index);
+      });
+    }
+
+    renderProjects();
+  </script>
+</body>
+</html>

@@ -38,7 +38,9 @@ nav {
   background-color: var(--white);
   display: flex;
   justify-content: center;
-  padding: 15px;
+  flex-wrap: wrap;
+  row-gap: 8px;
+  padding: 15px 10px;
   position: sticky;
   top: 0;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
@@ -47,10 +49,11 @@ nav {
 
 nav a {
   color: var(--primary);
-  margin: 0 15px;
+  margin: 0 12px;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9rem;
+  white-space: nowrap;
   transition: color 0.3s;
 }
 
@@ -78,6 +81,27 @@ h2 {
   margin-top: 0;
   border-left: 4px solid var(--secondary);
   padding-left: 15px;
+}
+
+h3 {
+  color: var(--primary);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-top: 24px;
+  margin-bottom: 10px;
+}
+
+h4 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+p, li {
+  color: var(--text);
+}
+
+strong {
+  color: var(--primary);
 }
 
 .profile-pic {
@@ -131,4 +155,67 @@ footer {
     display: block;
     margin: 0 auto 20px;
   }
+
+  header {
+    padding: 40px 20px;
+  }
+
+  header h1 {
+    font-size: 1.9rem;
+  }
+
+  nav a {
+    margin: 0 8px;
+    font-size: 0.82rem;
+  }
+
+  section {
+    padding: 24px;
+  }
+}
+
+/* Tab component (used on Mini Projects) */
+.tab-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 15px;
+}
+
+.tab-button {
+  background: #f1f5f9;
+  border: none;
+  color: var(--text);
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.tab-button:hover {
+  background: #e2e8f0;
+}
+
+.tab-button.active {
+  background: var(--secondary);
+  color: var(--white);
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
