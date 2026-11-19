@@ -26,6 +26,125 @@
   </nav>
 
   <div class="container">
+    <section class="featured">
+      <p class="eyebrow">Featured Hardware</p>
+      <h2>Custom PCB Design</h2>
+      <p class="lead">
+        I designed the electrical core of Swim Shady: the <strong>Actuator PCB</strong>, which powers and drives all eight thrusters and the servos, and the <strong>Battery Management Board (BMB)</strong>, which protects two LiPo packs and generates every supply rail on the vehicle. On both boards I created the <strong>complete schematic</strong> in Altium Designer and did the <strong>majority of the layout</strong>. I also taught the teammates who laid out the remaining sections and reviewed all of their work.
+      </p>
+
+      <ul class="highlight-grid">
+        <li><strong>2 boards</strong><span>Full schematic ownership, start to finish</span></li>
+        <li><strong>30 A / bus</strong><span>4-layer, high-current layout sized to IPC-2221</span></li>
+        <li><strong>Fail-safe</strong><span>Hardware protection that works without firmware</span></li>
+        <li><strong>Mentor</strong><span>Trained new Altium users and reviewed their layouts</span></li>
+      </ul>
+
+      <!-- Actuator PCB -->
+      <article class="pcb-card">
+        <div class="pcb-head">
+          <h3>Actuator PCB</h3>
+          <p class="pcb-meta">Thruster power &amp; control · 4-layer · Altium Designer</p>
+        </div>
+
+        <div class="pcb-intro">
+          <div>
+            <p>
+              The Actuator PCB powers and controls all eight thrusters and the servo systems. It integrates eight Blue Robotics ESCs, per-channel fusing and current sensing, a fail-safe magnetic kill switch, and a <strong>PCA9685 PWM driver</strong> that turns I²C commands from the NVIDIA Jetson into control signals for every actuator.
+            </p>
+            <ul class="spec-list">
+              <li>8 thruster channels across <strong>two isolated battery domains</strong> (4 ESCs each, shared ground)</li>
+              <li>Up to <strong>30 A per battery bus</strong>, 10 A per thruster channel</li>
+              <li>4-layer stackup: 1 oz outer / 0.5 oz inner copper</li>
+              <li><strong>9 Kelvin-sensed current channels</strong> with dedicated amplifiers</li>
+              <li>Individual fuse and status LED on every channel</li>
+              <li>ESCs mounted on both sides of the board for a compact footprint</li>
+            </ul>
+          </div>
+          <figure class="pcb-figure">
+            <a href="images/Actuator_PCB.png" target="_blank" rel="noopener">
+              <img src="images/Actuator_PCB.png" alt="Completed 4-layer layout of the Actuator PCB in Altium Designer, with wide copper pours for the thruster power paths">
+            </a>
+            <figcaption>The finished 4-layer layout. Wide copper pours carry the thruster current, and all 24 motor phases reach two connectors without a single crossing.</figcaption>
+          </figure>
+        </div>
+
+        <figure class="pcb-figure wide">
+          <a href="images/Actuator_Schematic.png" target="_blank" rel="noopener">
+            <img src="images/Actuator_Schematic.png" alt="Kill switch logic schematic for the Actuator PCB, with notes on operating states and current draw">
+          </a>
+          <figcaption>The kill-switch schematic page. Every block carries notes on its purpose, its operating states and the current-draw math, so a reviewer can follow the design without me there. <em>Click any image to view it full size.</em></figcaption>
+        </figure>
+
+        <h4>Engineering highlights</h4>
+        <ul class="design-list">
+          <li><strong>Fail-safe high-side kill switch.</strong> A Hall-effect sensor drives a MOSFET inverter stage, which switches paralleled P-channel power MOSFETs (D2PAK) on each battery rail. If the sensor is unplugged or the logic supply drops, the robot shuts off. I redesigned the gate drive so the sensor sinks only <strong>0.3 mA</strong>. That allowed a pull-up 10× smaller and made turn-off about <strong>10× faster</strong>, so the MOSFETs spend less time in their high-dissipation linear region.</li>
+          <li><strong>Gate &amp; transient protection.</strong> A resistor divider holds V<sub>GS</sub> at about −14.7 V on a fully charged 4S pack, inside the ±20 V rating, with 15 V Zener clamps as backup. TVS diodes on each battery input absorb the inductive spikes from cutting power under load, from hot-plugging and from motor back-EMF.</li>
+          <li><strong>High-current layout.</strong> Copper is sized to IPC-2221 for the fab's copper weights. Every battery and ESC path is a polygon pour, high-current nets use direct-connect pads, and via arrays feed two inner ground planes that carry the combined return current of both batteries.</li>
+          <li><strong>Precision sensing in a noisy environment.</strong> The shunt sense lines use Kelvin connections, routed as tight pairs away from the motor phase traces and moved to an inner layer where needed so the high-current copper stays unbroken.</li>
+          <li><strong>24 motor phases, zero crossings.</strong> BLDC phase order doesn't matter because direction is corrected in software. I used that to reassign connector pins and turn a tangle of 24 phases into a nested, planar route.</li>
+          <li><strong>Design for manufacturing.</strong> I built the stackup and design rules from OSH Park's published capabilities, ran full DRC, and used schematic-driven net classes so the rules carry through design changes. I also caught a vendor footprint pin-mapping error that <strong>would have shorted a battery</strong>.</li>
+        </ul>
+      </article>
+
+      <!-- Battery Management Board -->
+      <article class="pcb-card">
+        <div class="pcb-head">
+          <h3>Battery Management Board (BMB)</h3>
+          <p class="pcb-meta">Power distribution &amp; protection · Altium Designer</p>
+        </div>
+
+        <p>
+          The BMB fuses, protects and monitors two independent <strong>4S LiPo packs (13.2–16.8 V)</strong> and generates six regulated rails for the logic, servos, eight thrusters, a <strong>Jetson Orin Nano</strong> and a <strong>Teledyne Wayfinder DVL</strong>. The two packs share only a ground and their power rails never touch, so a failed pack can't take the other one down.
+        </p>
+
+        <div class="table-wrap">
+          <table class="rail-table">
+            <thead>
+              <tr><th>Rail</th><th>Load</th><th>Converter</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>14 V</td><td>4 thrusters per pack</td><td>LT8390 4-switch synchronous buck-boost (~600 kHz)</td></tr>
+              <tr><td>24 V</td><td>Wayfinder DVL</td><td>TPS55340 boost</td></tr>
+              <tr><td>19 V</td><td>Jetson Orin Nano</td><td>Boost</td></tr>
+              <tr><td>6 V</td><td>GoBilda servos (2.5 A stall)</td><td>AP64501 5 A buck</td></tr>
+              <tr><td>5 V, 3.3 V</td><td>Logic &amp; sensing</td><td>LM5164 bucks (100 V in, ~200 kHz)</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <figure class="pcb-figure wide">
+          <a href="images/BMB_Schematic.png" target="_blank" rel="noopener">
+            <img src="images/BMB_Schematic.png" alt="UVLO comparator schematic for the Battery Management Board, with notes on divider sizing, hysteresis and trip points">
+          </a>
+          <figcaption>The undervoltage-lockout comparator page. Divider sizing, the hysteresis derivation and the trip-point math are written right on the sheet.</figcaption>
+        </figure>
+
+        <h4>Engineering highlights</h4>
+        <ul class="design-list">
+          <li><strong>Regulated thruster bus.</strong> The pack voltage swings above and below 14 V as it discharges, so neither a buck nor a boost converter covers the full range. A four-switch buck-boost keeps thrust consistent from full charge to cutoff, and the ESCs never run off raw battery voltage.</li>
+          <li><strong>Protection that doesn't depend on firmware.</strong> An LM393 comparator with a TL431 reference handles undervoltage lockout. Power cuts at <strong>12.83 V</strong> (3.21 V/cell) and comes back only above <strong>13.54 V</strong>. That 0.71 V of hysteresis, plus a ~1 s debounce, keeps momentary thruster sag from tripping it and stops the thrusters flickering on and off near the threshold. A second comparator cuts power above 17.65 V, which catches a pack with the wrong cell count or a mis-set charger. If a comparator dies or the 5 V supply is lost, the IRF4905 high-side disconnect stays off.</li>
+          <li><strong>No hull penetrations.</strong> A Hall sensor and an external magnet replace a mechanical power switch, so nothing has to pass through the sealed hull.</li>
+          <li><strong>Current telemetry.</strong> INA219s on 4-terminal Kelvin shunts report to a Pico over I²C. Kelvin sensing matters here because on a 1 mΩ shunt, solder-joint resistance would otherwise be a large share of the measurement.</li>
+        </ul>
+      </article>
+
+      <!-- How I work -->
+      <div class="approach">
+        <h3>How I design</h3>
+        <div class="approach-grid">
+          <div>
+            <h4>Schematics written for the next engineer</h4>
+            <p>I keep my schematics clean and organized. Each functional block is boxed, titled and annotated with its purpose, its operating states and the math behind its component values, so teammates and reviewers can check my reasoning without me in the room. The excerpts above come straight from the working design files.</p>
+          </div>
+          <div>
+            <h4>Ownership &amp; mentorship</h4>
+            <p>I created the complete schematics for both boards and did most of the layout. For the remaining sections, I taught teammates who had never opened Altium, then reviewed every part they laid out before release.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section>
       <h2>Project Overview</h2>
       <p>
@@ -44,9 +163,8 @@
         My primary objective was to transition the vehicle from a "tangle of wires" to a centralized, professional system using <strong>Altium Designer</strong>.
       </p>
       <ul>
-        <li><strong>Custom ESC PCB:</strong> Designed and integrated a centralized board to organize eight Electronic Speed Controllers (ESCs) in a fixed row, streamlining diagnostics and reducing mechanical strain on wire terminals.</li>
-        <li><strong>Centralized Fuse Board:</strong> Developed a layout to protect thrusters and subsystems from overcurrent, significantly improving accessibility compared to previous scattered designs.</li>
-        <li><strong>Power Distribution:</strong> Managed a dual 24V battery system routed through buck converters to supply 16V to the Jetson Nano and the system fuse board.</li>
+        <li><strong>Actuator PCB &amp; Battery Management Board:</strong> Designed the vehicle's two core power boards (detailed above), replacing loose ESCs and scattered wiring with centralized, protected and serviceable hardware.</li>
+        <li><strong>Power Distribution:</strong> Managed a dual 4S LiPo battery system, regulated by the BMB into dedicated rails, including 19 V for the Jetson Orin Nano and a regulated 14 V thruster bus.</li>
         <li><strong>Safety Systems:</strong> Implemented a kill switch with an active low configuration, utilizing a solid-state relay to immediately disconnect power from thrusters upon trigger.</li>
       </ul>
     </section>
@@ -67,9 +185,12 @@
       <h2>Technical Stack</h2>
       <div class="tech-stack">
         <span class="tech-tag">Altium Designer</span>
+        <span class="tech-tag">4-Layer PCB Layout</span>
+        <span class="tech-tag">Power Electronics</span>
+        <span class="tech-tag">DC-DC Converters</span>
         <span class="tech-tag">ROS 2 (Galactic)</span>
         <span class="tech-tag">Python</span>
-        <span class="tech-tag">Jetson Nano</span>
+        <span class="tech-tag">Jetson Orin Nano</span>
         <span class="tech-tag">Teledyne DVL</span>
         <span class="tech-tag">I²C / PWM</span>
       </div>

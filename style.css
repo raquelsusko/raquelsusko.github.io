@@ -175,6 +175,203 @@ footer {
   }
 }
 
+/* Featured PCB section (AUV page) */
+.featured {
+  border-top: 4px solid var(--secondary);
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--secondary);
+}
+
+.lead {
+  font-size: 1.05rem;
+}
+
+.highlight-grid {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 8px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.highlight-grid li {
+  background: #f0fdfa;
+  border: 1px solid #ccfbf1;
+  border-radius: 10px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.highlight-grid strong {
+  font-size: 1.15rem;
+  color: var(--secondary);
+}
+
+.highlight-grid span {
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.pcb-card {
+  border-top: 1px solid #e2e8f0;
+  margin-top: 32px;
+  padding-top: 28px;
+}
+
+.pcb-head h3 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.pcb-meta {
+  margin: 4px 0 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.pcb-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.pcb-intro p {
+  margin-top: 0;
+}
+
+.spec-list {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.spec-list li {
+  margin-bottom: 6px;
+}
+
+.pcb-figure {
+  margin: 0;
+}
+
+.pcb-figure.wide {
+  margin: 24px 0;
+}
+
+.pcb-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.pcb-figure a:hover img {
+  transform: scale(1.01);
+}
+
+.pcb-figure figcaption {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.design-list {
+  padding-left: 20px;
+}
+
+.design-list li {
+  margin-bottom: 12px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  margin: 20px 0;
+}
+
+.rail-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.rail-table th,
+.rail-table td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.rail-table th {
+  background: #f1f5f9;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.rail-table td:first-child {
+  font-weight: 700;
+  color: var(--secondary);
+  white-space: nowrap;
+}
+
+.approach {
+  margin-top: 32px;
+  background: var(--primary);
+  border-radius: 10px;
+  padding: 24px 28px;
+}
+
+.approach h3,
+.approach h4,
+.approach p {
+  color: var(--white);
+}
+
+.approach h3 {
+  margin-top: 0;
+}
+
+.approach h4 {
+  margin: 0 0 6px;
+  color: #5eead4;
+}
+
+.approach p {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+.approach-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 700px) {
+  .highlight-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .pcb-intro,
+  .approach-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Tab component (used on Mini Projects) */
 .tab-buttons {
   display: flex;
