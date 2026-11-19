@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Capstone: GaN Matrix Converter | Raquel Susko</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <h1>Capstone: GaN Matrix Converter</h1>
+    <p>Isolated three-phase matrix converter rectifier for AI-server power</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="auv.html">AUV</a>
+    <a href="capstone.html">Capstone</a>
+    <a href="shield_ai.html">Shield AI</a>
+    <a href="surgical_robotics.html">Surgical Robotics</a>
+    <a href="lens_lab.html">LENS Lab</a>
+    <a href="drone.html">DRONE</a>
+    <a href="biosensor.html">Biosensor</a>
+    <a href="mini_projects.html">Mini Projects</a>
+  </nav>
+
+  <div class="container">
+    <section class="featured">
+      <p class="eyebrow">Senior Capstone · Texas A&amp;M Power Electronics Lab (Dr. Enjeti)</p>
+      <h2>Project Overview</h2>
+      <p><span class="status-badge">In progress: PCB layout phase</span></p>
+      <p class="lead">
+        I'm designing the PCB for a <strong>three-phase AC-to-DC rectifier built as a matrix converter</strong>. Six bidirectional GaN switches connect the three input phases directly to the output, with no bulky DC-link stage in between. The target application is power delivery for <strong>AI servers</strong>, where efficiency and power density matter most.
+      </p>
+
+      <figure class="pcb-figure wide">
+        <a href="images/Capstone.png" target="_blank" rel="noopener">
+          <img src="images/Capstone.png" alt="In-progress Altium layout of the matrix converter PCB, with six gate-drive cells on the right and the input and sensing circuitry on the left">
+        </a>
+        <figcaption>Layout in progress in Altium Designer. The six identical gate-drive cells sit on the right, and the thin lines are connections that haven't been routed yet. <em>Click to view full size.</em></figcaption>
+      </figure>
+
+      <ul class="highlight-grid">
+        <li><strong>6 switches</strong><span>Bidirectional GaN switches, no DC-link stage</span></li>
+        <li><strong>4 layers</strong><span>Power plane split into three phase sections</span></li>
+        <li><strong>6 cells</strong><span>Identical isolated gate-drive cells in a row</span></li>
+        <li><strong>Scripted</strong><span>Layout replication automated in Altium</span></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Key Design Choices</h2>
+      <ul class="design-list">
+        <li><strong>GaN power switches.</strong> Each of the six bidirectional switches (Q1–Q6) is built from Infineon IGLT65R055B2 GaN devices, chosen for the fast switching and low losses a high-density server supply needs.</li>
+        <li><strong>Isolated gate-drive cells.</strong> Each switch has its own gate-drive cell: a 2EDR7259X isolated gate driver, a local isolated supply module, and gate and snubber components. The same cell is repeated for all six switches, so every switch sees the same drive conditions.</li>
+        <li><strong>Clean gate signals.</strong> Vertical SMA connectors (Cinch 142-0701-201) carry each cell's gate signal and Kelvin-source connection. I switched to these from side-mount SMAs to cut cost without giving up signal quality.</li>
+        <li><strong>Sensing and input stage.</strong> The design also includes the sensing circuitry and the three-phase input stage that feed the converter.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>PCB Layout</h2>
+      <ul class="spec-list">
+        <li><strong>4-layer stackup</strong> for OSH Park: top, ground, power (split into three phase sections) and bottom</li>
+        <li><strong>Components on both sides</strong> of the board to keep the footprint compact</li>
+        <li><strong>Six identical gate-drive cells</strong> placed in a row</li>
+        <li><strong>Layout automation:</strong> I hand-tuned one gate-drive cell, then wrote scripts to copy it to all six positions, place parts and clean up designators, so all six cells are guaranteed identical</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>What This Project Is Teaching Me</h2>
+      <div class="lesson-grid">
+        <div class="lesson">
+          <h4>High-frequency PCB design</h4>
+          <p>GaN switches turn on and off far faster than silicon, so the layout itself becomes part of the circuit. I've learned to treat gate loops, Kelvin-source connections and signal routing as design decisions, not afterthoughts, because stray inductance and noise directly affect how cleanly the switches operate.</p>
+        </div>
+        <div class="lesson">
+          <h4>High voltage vs. low voltage</h4>
+          <p>This board puts three-phase power and low-voltage control signals side by side. I've learned how to keep the two domains apart with isolated gate drivers, isolated supplies and a split power plane, and how that separation shapes where every component and trace can go.</p>
+        </div>
+        <div class="lesson">
+          <h4>Dense, routable placement</h4>
+          <p>To shrink the board, I place components tightly on both sides while leaving enough room to actually route between them. It's a constant trade-off between board area and routability, and it's changed how I plan a layout before placing the first part.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Technical Stack</h2>
+      <div class="tech-stack">
+        <span class="tech-tag">Altium Designer</span>
+        <span class="tech-tag">Power Electronics</span>
+        <span class="tech-tag">GaN Gate Drive</span>
+        <span class="tech-tag">4-Layer PCB Layout</span>
+        <span class="tech-tag">High-Frequency Layout</span>
+        <span class="tech-tag">Isolation Design</span>
+        <span class="tech-tag">Layout Automation Scripting</span>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    &copy; 2026 Raquel Susko | Texas A&amp;M University
+  </footer>
+</body>
+</html>
