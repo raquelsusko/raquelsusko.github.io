@@ -414,6 +414,19 @@ footer {
   }
 }
 
+/* Highlighted note, e.g. job-search status on the home page */
+.callout {
+  background: #f0fdfa;
+  border-left: 4px solid var(--secondary);
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+
+.callout i {
+  color: var(--secondary);
+  margin-right: 4px;
+}
+
 /* Current page in nav */
 nav a[aria-current="page"] {
   color: var(--secondary);
