@@ -6,7 +6,7 @@
   <title>Surgical Robotics | Raquel Susko</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
   <header>
@@ -18,7 +18,7 @@
     <a href="auv.html">AUV</a>
     <a href="capstone.html">Capstone</a>
     <a href="shield_ai.html">Shield AI</a>
-    <a href="surgical_robotics.html">Surgical Robotics</a>
+    <a href="surgical_robotics.html" aria-current="page">Surgical Robotics</a>
     <a href="lens_lab.html">LENS Lab</a>
     <a href="drone.html">DRONE</a>
     <a href="biosensor.html">Biosensor</a>
@@ -26,40 +26,53 @@
   </nav>
   <div class="container">
     <section>
-      <h2>REU Student Researcher</h2>
-      <p>
-        During the summer of 2025, I served as an REU Student Researcher in the <strong>Imerse Lab</strong> at Johns Hopkins University. My work focused on pioneering surgical robotics using Universal Robotic arms and high-precision Zivid cameras.
+      <h2>Overview</h2>
+      <dl class="glance">
+        <div><dt>Role</dt><dd>REU Student Researcher</dd></div>
+        <div><dt>Where</dt><dd>Imerse Lab, Johns Hopkins LCSR</dd></div>
+        <div><dt>When</dt><dd>Summer 2025</dd></div>
+        <div><dt>Built</dt><dd>ROS 2 haptic teleoperation for a UR5 arm</dd></div>
+      </dl>
+      <p class="lead">
+        I developed a <strong>ROS 2 teleoperation system</strong> that lets an operator control a <strong>UR5 robotic arm</strong> with <strong>Force Dimension haptic devices</strong>. It was designed to collect high-precision demonstration data for imitation learning in partial nephrectomy procedures, using Universal Robots arms and high-precision Zivid cameras.
       </p>
-      <div style="text-align: center; margin: 30px 0;">
-        <img src="images/JHU.jpg" alt="Raquel at the JHU Imerse Lab workspace" style="width: 100%; max-width: 600px; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);">
-        <p style="font-size: 0.85rem; color: #64748b; margin-top: 10px;">At my workspace in the Imerse Lab, configuring the ROS 2 teleoperation environment.</p>
-      </div>
-      <div style="text-align: center; margin-bottom: 20px;">
-        <a href="documents/JHU_REU_poster.pdf" class="button" target="_blank">
+      <figure class="media">
+        <img src="images/JHU.jpg" alt="Raquel at the JHU Imerse Lab workspace" style="max-width: 600px;">
+        <figcaption>At my workspace in the Imerse Lab, configuring the ROS 2 teleoperation environment.</figcaption>
+      </figure>
+      <div class="button-row" style="justify-content: center;">
+        <a href="documents/JHU_REU_poster.pdf" class="button" target="_blank" rel="noopener">
           <i class="fas fa-chalkboard-teacher"></i> View Research Poster
+        </a>
+        <a href="https://github.com/raquelsusko/JHU_Teleop" class="button" style="background-color: var(--primary);" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i> JHU_Teleop Repository
         </a>
       </div>
     </section>
+
     <section>
-      <h2>System Overview: Haptic Teleoperation</h2>
-      <p>
-        I developed a ROS 2-based teleoperation system that enables intuitive control of a <strong>UR5 robotic arm</strong> using <strong>Force Dimension haptic devices</strong>. The system was specifically designed to facilitate high-precision data collection for imitation learning applications in partial nephrectomy procedures.
-      </p>
-      <ul>
-        <li><strong>PID Control:</strong> Engineered trajectory smoothing to ensure surgical-grade precision.</li>
-        <li><strong>Multi-Modal Integration:</strong> Built a custom 3-pedal foot interface for clutch, vacuum, and recording control.</li>
-        <li><strong>Data Synchronization:</strong> Captured 6-DOF poses, velocities, and RGB-D point cloud data for ML training.</li>
+      <h2>System Highlights</h2>
+      <ul class="design-list">
+        <li><strong>PID control:</strong> Engineered trajectory smoothing for surgical-grade precision.</li>
+        <li><strong>Multi-modal input:</strong> Built a custom 3-pedal foot interface for clutch, vacuum and recording control.</li>
+        <li><strong>Synchronized data capture:</strong> Recorded 6-DOF poses, velocities and RGB-D point clouds for ML training.</li>
       </ul>
-    </section>
-    <section>
-      <h2>Project Repository</h2>
-      <p>The full implementation of the teleoperation nodes and data recorder can be found on my GitHub:</p>
-      <a href="https://github.com/raquelsusko/JHU_Teleop" class="button" target="_blank">
-        <i class="fab fa-github"></i> JHU_Teleop Repository
-      </a>
+      <p>The full implementation of the teleoperation nodes and data recorder is in the <a href="https://github.com/raquelsusko/JHU_Teleop" target="_blank" rel="noopener">JHU_Teleop repository</a> on GitHub.</p>
     </section>
 
     <section>
+      <h2>Technical Stack</h2>
+      <div class="tech-stack">
+        <span class="tech-tag">ROS 2</span>
+        <span class="tech-tag">UR5</span>
+        <span class="tech-tag">Force Dimension Haptics</span>
+        <span class="tech-tag">Zivid 3D Vision</span>
+        <span class="tech-tag">PID Control</span>
+        <span class="tech-tag">Imitation Learning Data Collection</span>
+      </div>
+    </section>
+
+    <section class="reflection">
       <h2>Reflection</h2>
       <p>
         I was terrified going into this experience. Johns Hopkins was one of those names I'd heard my whole life, and spending a summer there left me with a serious case of imposter syndrome. I convinced myself there was no way I belonged, no way I was smart enough to keep up. So I stayed quiet. I tackled the vocabulary of biomedical and surgical terminology on my own, buried myself in research papers, and avoided asking questions I was afraid would expose what I didn't know.

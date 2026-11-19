@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LENS Lab Research | Raquel Susko</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
   <header>
@@ -17,44 +19,59 @@
     <a href="capstone.html">Capstone</a>
     <a href="shield_ai.html">Shield AI</a>
     <a href="surgical_robotics.html">Surgical Robotics</a>
-    <a href="lens_lab.html">LENS Lab</a>
+    <a href="lens_lab.html" aria-current="page">LENS Lab</a>
     <a href="drone.html">DRONE</a>
     <a href="biosensor.html">Biosensor</a>
     <a href="mini_projects.html">Mini Projects</a>
   </nav>
   <div class="container">
     <section>
-      <h2>Research Objectives: Probing Model Robustness</h2>
-      <p>
-        As a Student Researcher, I am investigating the boundaries of <strong>SmolVLA</strong> and <strong>Imitation Learning</strong>. Our current research focuses on identifying the specific variables—color, geometry, and spatial placement—that trigger model failure or success in generalized environments.
+      <h2>Research Overview</h2>
+      <dl class="glance">
+        <div><dt>Role</dt><dd>Student Researcher</dd></div>
+        <div><dt>Lab</dt><dd>LENS Lab, Texas A&amp;M</dd></div>
+        <div><dt>Focus</dt><dd>Out-of-distribution generalization in VLA models</dd></div>
+        <div><dt>Platform</dt><dd>SO101 arms with LeRobot</dd></div>
+      </dl>
+      <p class="lead">
+        I'm investigating the limits of <strong>SmolVLA</strong> and <strong>imitation learning</strong>: which variables (color, geometry and spatial placement) make a model succeed or fail in new environments.
       </p>
-      <ul>
-        <li><strong>Data Efficiency:</strong> Quantifying the minimum threshold of expert demonstrations required for stable task completion to reduce the overhead of Imitation Learning.</li>
-        <li><strong>Feature Generalization:</strong> Testing how VLA models weigh visual features (e.g., distinguishing an object by color vs. shape) and their ability to generalize to novel object placements.</li>
-        <li><strong>Algorithmic Implementation:</strong> Utilizing <strong>Lerobot</strong> to deploy and compare <strong>ACT</strong> (Action Chunking with Transformers), <strong>SmolVLA</strong>, and larger <strong>VLA models</strong> on SO101 robotic platforms.</li>
+      <h3>Research objectives</h3>
+      <ul class="design-list">
+        <li><strong>Data efficiency:</strong> Quantifying the minimum number of expert demonstrations needed for stable task completion, to reduce the overhead of imitation learning.</li>
+        <li><strong>Feature generalization:</strong> Testing how VLA models weigh visual features (for example, recognizing an object by color vs. shape) and how well they generalize to new object placements.</li>
+        <li><strong>Model comparison:</strong> Using <strong>LeRobot</strong> to deploy and compare <strong>ACT</strong> (Action Chunking with Transformers), <strong>SmolVLA</strong> and larger <strong>VLA models</strong> on SO101 robotic platforms.</li>
       </ul>
-    </section>
-    <section>
-      <h2>Scientific Methodology</h2>
+      <h3>Methodology</h3>
       <p>
-        We are systematically perturbing the environment to observe the model's <strong>policy robustness</strong>. By keeping the same task but varying the objects and their placement, we aim to understand what VLA models are generalizing, and what concepts they struggle to learn.
+        We systematically perturb the environment to measure <strong>policy robustness</strong>. By keeping the task the same but varying the objects and their placement, we aim to understand what VLA models actually generalize and which concepts they struggle to learn.
       </p>
-    </section>
-    <section>
-      <h2>Lab Demonstration</h2>
-      <div class="video-container" style="text-align: center;">
-        <h3>Vision-Language-Action Deployment</h3>
-        <video width="100%" controls style="max-width: 600px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-          <source src="videos/lenslab.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <p style="font-size: 0.85rem; color: #64748b; margin-top: 10px;">
-          Deploying trained VLA policies on the SO101 platform. This workflow involves gathering human-expert demonstrations via teleoperation before training and deployment.
-        </p>
-      </div>
     </section>
 
     <section>
+      <h2>Lab Demonstration</h2>
+      <figure class="media">
+        <video controls preload="metadata" style="max-width: 600px;">
+          <source src="videos/lenslab.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <figcaption>Deploying trained VLA policies on the SO101 platform. The workflow starts with collecting human-expert demonstrations through teleoperation, followed by training and deployment.</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Technical Stack</h2>
+      <div class="tech-stack">
+        <span class="tech-tag">LeRobot</span>
+        <span class="tech-tag">SmolVLA</span>
+        <span class="tech-tag">ACT</span>
+        <span class="tech-tag">Imitation Learning</span>
+        <span class="tech-tag">SO101</span>
+        <span class="tech-tag">Teleoperation</span>
+      </div>
+    </section>
+
+    <section class="reflection">
       <h2>Reflection</h2>
       <p>
         Working in the LENS Lab was intimidating in a way I hadn't experienced before. Surrounded by extremely talented graduate students and professors tackling advanced topics in imitation learning, I hit a steep vocabulary barrier almost immediately. There was an overwhelming amount of code, concepts, and background knowledge I had to absorb before I even understood what questions to ask, let alone how to answer them.
@@ -67,5 +84,8 @@
       </p>
     </section>
   </div>
+  <footer>
+    &copy; 2026 Raquel Susko | Texas A&amp;M University
+  </footer>
 </body>
 </html>

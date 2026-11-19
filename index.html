@@ -6,17 +6,17 @@
   <title>Raquel Susko | Robotics Hardware Engineer</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
   <header>
     <h1>Raquel Susko</h1>
     <p>B.S. Electrical Engineering (May '27) | M.S. Electrical Engineering (Dec '27)</p>
-    <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.5;">Texas A&M University | Honors Student | Engineering Honors Ambassador</p>
+    <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.7;">Texas A&amp;M University | Honors Student | Engineering Honors Ambassador</p>
   </header>
 
   <nav>
-    <a href="index.html">Home</a>
+    <a href="index.html" aria-current="page">Home</a>
     <a href="auv.html">AUV</a>
     <a href="capstone.html">Capstone</a>
     <a href="shield_ai.html">Shield AI</a>
@@ -31,63 +31,135 @@
     <section>
       <img src="images/profile.JPG" alt="Raquel Susko" class="profile-pic" />
       <h2>Professional Profile</h2>
-      <p>
-        I am a graduate-track Electrical Engineering student at Texas A&M University, specializing in the intersection of <strong>Mechatronic Design, Embedded Systems, and Robotic Hardware</strong>. 
+      <p class="lead">
+        I'm a graduate-track Electrical Engineering student at Texas A&amp;M University, focused on <strong>robotic hardware</strong>: custom PCB design, power electronics, embedded systems and mechatronic integration.
       </p>
       <p>
-        <strong>My Goal:</strong> I am seeking to push the boundaries of robotic hardware &mdash; custom PCB design, embedded firmware, and mechatronic integration &mdash; for autonomous and surgical systems. Upon completing my Master's in December 2027, I aim to lead the development of next-generation robotic hardware that bridges the gap between digital intelligence and physical execution.
+        <strong>My goal:</strong> to push the boundaries of hardware for autonomous and surgical robots. After completing my Master's in December 2027, I aim to lead the development of next-generation robotic hardware that bridges digital intelligence and physical execution.
       </p>
 
-      <div style="margin-top: 25px; display: flex; gap: 15px; flex-wrap: wrap;">
-        <a href="documents/resume.pdf" class="button" target="_blank">
+      <div class="button-row">
+        <a href="documents/resume.pdf" class="button" target="_blank" rel="noopener">
           <i class="fas fa-file-pdf"></i> Download Resume
         </a>
-        <a href="documents/transcript.pdf" class="button" style="background-color: #64748b;" target="_blank">
+        <a href="documents/transcript.pdf" class="button" style="background-color: #64748b;" target="_blank" rel="noopener">
           <i class="fas fa-graduation-cap"></i> Unofficial Transcript
         </a>
       </div>
     </section>
 
     <section>
+      <h2>Honors &amp; Awards</h2>
+      <ul class="award-list">
+        <li>
+          <i class="fas fa-award"></i>
+          <div>
+            <strong>Altium Global Scholarship</strong> <span class="status-badge">Training in progress</span>
+            <p>Selected for Altium's global scholarship program. I'm currently completing its Altium Designer training.</p>
+          </div>
+        </li>
+        <li>
+          <i class="fas fa-flask"></i>
+          <div>
+            <strong>REU Student Researcher, Johns Hopkins University</strong>
+            <p>Summer 2025 researcher at the Laboratory for Computational Sensing and Robotics.</p>
+          </div>
+        </li>
+        <li>
+          <i class="fas fa-star"></i>
+          <div>
+            <strong>University &amp; Departmental Honors Student</strong>
+            <p>Texas A&amp;M University, with a minor in Computer Science.</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Featured Work</h2>
+      <div class="project-grid">
+        <a class="project-card" href="auv.html">
+          <span class="card-kicker">PCB Design · Electrical Lead</span>
+          <h3>WIRED AUV</h3>
+          <p>Designed the Actuator PCB, Battery Management Board and Jetson breakout board for a RoboSub underwater robot.</p>
+        </a>
+        <a class="project-card" href="capstone.html">
+          <span class="card-kicker">Power Electronics · In progress</span>
+          <h3>Capstone: GaN Matrix Converter</h3>
+          <p>A 4-layer PCB for a three-phase matrix converter rectifier aimed at AI-server power.</p>
+        </a>
+        <a class="project-card" href="shield_ai.html">
+          <span class="card-kicker">Internship · Summer 2026</span>
+          <h3>Shield AI</h3>
+          <p>EE Hardware Test Engineer Intern. Designed a production test rack for testing multiple devices in parallel.</p>
+        </a>
+        <a class="project-card" href="surgical_robotics.html">
+          <span class="card-kicker">Research · Johns Hopkins</span>
+          <h3>Surgical Robotics</h3>
+          <p>A ROS 2 haptic teleoperation system for a UR5 arm, built to collect surgical imitation-learning data.</p>
+        </a>
+        <a class="project-card" href="lens_lab.html">
+          <span class="card-kicker">Research · Texas A&amp;M</span>
+          <h3>LENS Lab</h3>
+          <p>Probing how well Vision-Language-Action models such as SmolVLA and ACT generalize, using SO101 arms.</p>
+        </a>
+        <a class="project-card" href="drone.html">
+          <span class="card-kicker">Aerial Manipulation</span>
+          <h3>DRONE</h3>
+          <p>A drone carrying an SO101 arm, running SmolVLA inference on an onboard Jetson.</p>
+        </a>
+        <a class="project-card" href="biosensor.html">
+          <span class="card-kicker">Research · Embedded Systems</span>
+          <h3>Biosensor</h3>
+          <p>STM32 firmware and a Flutter BLE app for real-time electrochemical biosensing.</p>
+        </a>
+      </div>
+    </section>
+
+    <section>
       <h2>Technical Expertise</h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px;">
+      <div class="skill-grid">
         <div>
-          <h4 style="color: var(--secondary); margin-bottom: 8px;"><i class="fas fa-microchip"></i> Hardware Design</h4>
-          <p style="font-size: 0.85rem;">Altium Designer (Custom PCB), STM32 Firmware, I²C/SPI/DMA, Jetson Nano, Raspberry Pi</p>
+          <h4><i class="fas fa-microchip"></i> Hardware Design</h4>
+          <p>Altium Designer (schematic &amp; multilayer layout), high-current PCB design, power electronics, GaN gate drive, DC-DC converters, design for manufacturing</p>
         </div>
         <div>
-          <h4 style="color: var(--secondary); margin-bottom: 8px;"><i class="fas fa-robot"></i> Robotics & Mechatronics</h4>
-          <p style="font-size: 0.85rem;">PID Control, Servo & Actuator Systems, Zivid 3D Vision, UR5 Teleoperation, Force Dimension Haptics</p>
+          <h4><i class="fas fa-bolt"></i> Embedded Systems</h4>
+          <p>STM32 firmware (C/C++), I²C / SPI / DMA / UART, NVIDIA Jetson, Raspberry Pi</p>
         </div>
         <div>
-          <h4 style="color: var(--secondary); margin-bottom: 8px;"><i class="fas fa-code"></i> Software & AI</h4>
-          <p style="font-size: 0.85rem;">Python, C++, ROS2 (Humble/Galactic), Lerobot, PyTorch, TensorFlow, Dart/Flutter</p>
+          <h4><i class="fas fa-robot"></i> Robotics &amp; Mechatronics</h4>
+          <p>PID control, servo &amp; actuator systems, Zivid 3D vision, UR5 teleoperation, Force Dimension haptics</p>
+        </div>
+        <div>
+          <h4><i class="fas fa-code"></i> Software &amp; AI</h4>
+          <p>Python, C++, ROS 2 (Humble/Galactic), LeRobot, PyTorch, TensorFlow, Dart/Flutter</p>
         </div>
       </div>
     </section>
 
     <section>
-      <h2>Leadership & Communication</h2>
+      <h2>Leadership &amp; Communication</h2>
       <p>
-        Technical excellence is only as effective as the team behind it. I prioritize clear communication, student mentorship, and interdisciplinary collaboration.
+        Technical excellence is only as effective as the team behind it. I prioritize clear communication, mentorship and interdisciplinary collaboration.
       </p>
       <ul>
-        <li><strong>Engineering Honors Ambassador:</strong> Represent the Texas A&M Engineering Honors Department at recruitment events and student panels, assisting prospective students in navigating elite academic pathways.</li>
-        <li><strong>Electrical Subteam Lead (WIRED AUV):</strong> Manage a cross-functional team of engineers, delegating tasks for custom PCB design and system integration for international competitions.</li>
-        <li><strong>Computer Science Peer Teacher:</strong> Mentored 100+ students in C++ and data structures, translating complex algorithmic concepts into digestible learning objectives.</li>
+        <li><strong>Electrical Lead (WIRED AUV):</strong> Led the electrical subteam, delegating custom PCB design and system integration work for the international RoboSub competition. I taught new members Altium and reviewed their layouts, and I now mentor the next generation of members.</li>
+        <li><strong>Engineering Honors Ambassador:</strong> Represent the Texas A&amp;M Engineering Honors department at recruitment events and student panels, helping prospective students navigate honors pathways.</li>
+        <li><strong>Computer Science Peer Teacher:</strong> Mentored 100+ students in C++ and data structures, translating complex algorithms into digestible lessons.</li>
       </ul>
     </section>
 
     <section style="text-align: center;">
-      <h2>Let's Connect</h2>
-      <p>I am always open to discussing research collaborations or internship opportunities in robotics and AI.</p>
-      <div style="margin-top: 20px;">
+      <h2 style="display: inline-block;">Let's Connect</h2>
+      <p>I'm always open to discussing research collaborations or internship opportunities in robotics hardware.</p>
+      <div class="button-row" style="justify-content: center;">
         <a href="mailto:raquelsusko@tamu.edu" class="button"><i class="fas fa-envelope"></i> Email Me</a>
-        <a href="https://linkedin.com/in/raquelsusko" class="button" style="background: #0077b5;"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://linkedin.com/in/raquelsusko" class="button" style="background: #0077b5;" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
       </div>
     </section>
   </div>
 
-  <footer>&copy; 2026 Raquel Susko | Texas A&M University</footer>
+  <footer>&copy; 2026 Raquel Susko | Texas A&amp;M University</footer>
 </body>
 </html>

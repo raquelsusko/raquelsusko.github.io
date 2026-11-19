@@ -2,14 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DRONE Project | Raquel Susko</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
   <header>
     <h1>Project: DRONE</h1>
-    <p>Aerial Manipulation & High-Compute Edge Integration</p>
+    <p>Aerial Manipulation &amp; High-Compute Edge Integration</p>
   </header>
   <nav>
     <a href="index.html">Home</a>
@@ -18,42 +20,47 @@
     <a href="shield_ai.html">Shield AI</a>
     <a href="surgical_robotics.html">Surgical Robotics</a>
     <a href="lens_lab.html">LENS Lab</a>
-    <a href="drone.html">DRONE</a>
+    <a href="drone.html" aria-current="page">DRONE</a>
     <a href="biosensor.html">Biosensor</a>
     <a href="mini_projects.html">Mini Projects</a>
   </nav>
   <div class="container">
     <section>
       <h2>Autonomous Aerial Object Retrieval</h2>
-      <p>
-        This project explores the limits of <strong>Vision-Language-Action (VLA)</strong> models in non-static, high-vibration environments. Our goal is to enable an aerial robot to execute complex retrieval tasks based on natural language commands (e.g., "Pick up the red block").
+      <dl class="glance">
+        <div><dt>Goal</dt><dd>Language-commanded object retrieval from the air</dd></div>
+        <div><dt>Platform</dt><dd>SO101 arm mounted on a lightweight drone</dd></div>
+        <div><dt>Compute</dt><dd>Onboard NVIDIA Jetson Nano running SmolVLA</dd></div>
+      </dl>
+      <p class="lead">
+        This project explores the limits of <strong>Vision-Language-Action (VLA)</strong> models in moving, high-vibration environments. The goal is for an aerial robot to carry out retrieval tasks from natural-language commands, such as "Pick up the red block."
       </p>
-      
-      <h3>Hardware-Software Co-Design</h3>
+
+      <h3>Hardware-software co-design</h3>
       <p>
-        Integrating an <strong>SO101 arm</strong> onto a lightweight drone presented a significant mechatronic challenge. We worked to optimize the <strong>Thrust-to-Weight ratio</strong> while maintaining enough <strong>Edge Compute</strong> power to run inference locally.
+        Mounting an <strong>SO101 arm</strong> on a lightweight drone was a significant mechatronic challenge. We had to optimize the <strong>thrust-to-weight ratio</strong> while keeping enough <strong>edge compute</strong> to run inference onboard.
       </p>
-      <ul>
-        <li><strong>Edge Computing:</strong> Integrated an <strong>NVIDIA Jetson Nano</strong> to handle real-time vision processing and SmolVLA inference.</li>
-        <li><strong>Dynamic Stability:</strong> Problem-solved the center-of-gravity (CoG) shifts caused by the movement of a heavy robotic arm relative to the drone's chassis.</li>
-        <li><strong>Power Management:</strong> Balanced high-capacity battery requirements with the strict weight constraints of an aerial platform.</li>
+      <ul class="design-list">
+        <li><strong>Edge computing:</strong> Integrated an <strong>NVIDIA Jetson Nano</strong> for real-time vision processing and SmolVLA inference.</li>
+        <li><strong>Dynamic stability:</strong> Solved the center-of-gravity shifts caused by a heavy robotic arm moving relative to the drone's frame.</li>
+        <li><strong>Power management:</strong> Balanced high-capacity battery needs against the strict weight limits of an aerial platform.</li>
+        <li><strong>Unconventional arm control:</strong> Explored several ways to control a 6-DOF arm with an unusual range of motion, mounted upside down under the drone.</li>
       </ul>
     </section>
+
     <section>
-      <h2>Flight Testing & Development</h2>
-      <div class="video-container" style="text-align: center;">
-        <h3>Aerial Integration Test</h3>
-        <video width="100%" controls style="max-width: 600px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+      <h2>Flight Testing &amp; Development</h2>
+      <figure class="media">
+        <video controls preload="metadata" style="max-width: 600px;">
           <source src="videos/drone_flying.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-        <p style="font-size: 0.85rem; color: #64748b; margin-top: 10px;">
-          Initial flight stability test with the SO101 arm payload. Current research focuses on dampening the vibrations that affect the VLA model's visual input.
-        </p>
-      </div>
+        <figcaption>Initial flight-stability test with the SO101 arm payload. Current work focuses on damping the vibrations that disturb the VLA model's camera input.</figcaption>
+      </figure>
     </section>
+
     <section>
-      <h2>Research Focus</h2>
+      <h2>Technical Stack</h2>
       <div class="tech-stack">
         <span class="tech-tag">SmolVLA Inference</span>
         <span class="tech-tag">Aerial Manipulation</span>
@@ -63,7 +70,7 @@
       </div>
     </section>
 
-    <section>
+    <section class="reflection">
       <h2>Reflection</h2>
       <p>
         This project was riddled with roadblocks from start to finish. I reflashed the Jetson more times than I can count, ran into compatibility issues with seemingly every software installation, and spent weeks exploring different ways to control a 6-degree-of-freedom arm with an unusual range of motion, mounted upside down on the drone. Nothing about it was straightforward.
@@ -76,5 +83,8 @@
       </p>
     </section>
   </div>
+  <footer>
+    &copy; 2026 Raquel Susko | Texas A&amp;M University
+  </footer>
 </body>
 </html>

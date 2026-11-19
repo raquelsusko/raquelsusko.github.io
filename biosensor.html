@@ -6,12 +6,12 @@
   <title>Biosensor Research | Raquel Susko</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
   <header>
     <h1>Electrochemical Protein Detection</h1>
-    <p>Real-Time Biosensing & Embedded Systems Integration</p>
+    <p>Real-Time Biosensing &amp; Embedded Systems Integration</p>
   </header>
   <nav>
     <a href="index.html">Home</a>
@@ -21,54 +21,61 @@
     <a href="surgical_robotics.html">Surgical Robotics</a>
     <a href="lens_lab.html">LENS Lab</a>
     <a href="drone.html">DRONE</a>
-    <a href="biosensor.html">Biosensor</a>
+    <a href="biosensor.html" aria-current="page">Biosensor</a>
     <a href="mini_projects.html">Mini Projects</a>
   </nav>
   <div class="container">
     <section>
       <h2>Research Overview</h2>
-      <p>
-        During this research term, I focused on the technical implementation of a real-time biosensing platform. Our work bridged the gap between low-level firmware development and high-level mobile user interfaces, creating a cohesive system for monitoring cardiovascular biomarkers.
-      </p>
-      <p>
-        The project involved developing a microcontroller-based system to collect, log, and display electrochemical and temperature data in real-time.
+      <dl class="glance">
+        <div><dt>Role</dt><dd>Researcher: firmware &amp; mobile app</dd></div>
+        <div><dt>Microcontroller</dt><dd>STM32WB55RG</dd></div>
+        <div><dt>Interfaces</dt><dd>SPI, I²C + DMA, BLE, microSD</dd></div>
+        <div><dt>Application</dt><dd>Monitoring cardiovascular biomarkers</dd></div>
+      </dl>
+      <p class="lead">
+        I worked on a <strong>real-time biosensing platform</strong> that collects, logs and displays electrochemical and temperature data. The work spanned low-level firmware and a mobile app, creating one system for monitoring cardiovascular biomarkers.
       </p>
     </section>
+
     <section>
-      <h2>Embedded Firmware & Hardware Communication</h2>
+      <h2>Embedded Firmware &amp; Hardware Communication</h2>
       <p>
-        I served a researcher for firmware integration on the <strong>STM32WB55RG</strong> microcontroller platform. Using <strong>STM32CubeIDE</strong>, I helped configure system clocks, GPIOs, and peripherals to manage complex data flows.
+        I worked on firmware integration for the <strong>STM32WB55RG</strong> microcontroller. Using <strong>STM32CubeIDE</strong>, I helped configure system clocks, GPIOs and peripherals to manage the system's data flows.
       </p>
-      <ul>
-        <li><strong>SPI Integration:</strong> Modified and adapted SDKs from Analog Devices to enable communication with the <strong>AD5940 potentiostat</strong> for precise electrochemical signal measurement.</li>
-        <li><strong>I²C & DMA:</strong> Implemented <strong>I²C</strong> protocols for temperature sensing, utilizing <strong>Direct Memory Access (DMA)</strong> to ensure non-blocking, efficient data transfers essential for real-time systems.</li>
-        <li><strong>Data Persistence:</strong> Integrated a <strong>FATFS</strong> file system for microSD card logging, developing a unique timestamp-based naming convention to prevent data overwriting during long-term monitoring sessions.</li>
+      <ul class="design-list">
+        <li><strong>SPI integration:</strong> Adapted Analog Devices SDKs to communicate with the <strong>AD5940 potentiostat</strong> for precise electrochemical measurements.</li>
+        <li><strong>I²C &amp; DMA:</strong> Implemented <strong>I²C</strong> temperature sensing, using <strong>Direct Memory Access (DMA)</strong> for the non-blocking data transfers a real-time system needs.</li>
+        <li><strong>Data logging:</strong> Integrated a <strong>FATFS</strong> file system for microSD logging, with a timestamp-based file-naming scheme that prevents data from being overwritten during long monitoring sessions.</li>
       </ul>
     </section>
+
     <section>
       <h2>Mobile Application Development</h2>
       <p>
-        To make the data accessible to users, I contributed to a cross-platform mobile application built with <strong>Flutter</strong>.
+        To make the data accessible, I contributed to a cross-platform <strong>Flutter</strong> mobile app.
       </p>
-      <ul>
-        <li>Designed front-end UI components using <strong>Dart</strong> to improve navigability and data readability.</li>
-        <li>Developed asynchronous data handling to process real-time streams coming from the microcontroller via <strong>Bluetooth Low Energy (BLE)</strong>.</li>
-        <li>Built custom interface sections, such as a sampling interval configuration page, to give users control over sensor data frequency.</li>
+      <ul class="design-list">
+        <li><strong>UI:</strong> Designed front-end components in <strong>Dart</strong> to make navigation and data easier to read.</li>
+        <li><strong>Real-time data:</strong> Built asynchronous handling for live data streams from the microcontroller over <strong>Bluetooth Low Energy (BLE)</strong>.</li>
+        <li><strong>User control:</strong> Built custom pages such as a sampling-interval setting, so users control how often the sensors report.</li>
       </ul>
     </section>
+
     <section>
       <h2>Technical Stack</h2>
       <div class="tech-stack">
         <span class="tech-tag">Embedded C</span>
         <span class="tech-tag">STM32CubeIDE</span>
-        <span class="tech-tag">I²C / SPI</span>
-        <span class="tech-tag">Flutter & Dart</span>
+        <span class="tech-tag">I²C / SPI / DMA</span>
+        <span class="tech-tag">AD5940 Potentiostat</span>
+        <span class="tech-tag">Flutter &amp; Dart</span>
         <span class="tech-tag">BLE</span>
         <span class="tech-tag">FATFS</span>
       </div>
     </section>
 
-    <section>
+    <section class="reflection">
       <h2>Reflection</h2>
       <p>
         This project taught me more about my goals than about biosensing itself. Coming into electrical engineering, I thought I wanted to work on biomedical applications, specifically robotic prosthetics. So when I found a research opportunity focused on detecting proteins in the blood, I was thrilled &mdash; it felt like the closest project yet to what had originally drawn me to engineering.
@@ -82,7 +89,7 @@
     </section>
   </div>
   <footer>
-    &copy; 2026 Raquel Susko | Texas A&M University
+    &copy; 2026 Raquel Susko | Texas A&amp;M University
   </footer>
 </body>
 </html>
